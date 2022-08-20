@@ -12,55 +12,55 @@ object MetalHitSound {
       (start, amp, pan) => synthPlayer(METAL_HIT_1)
         .playMono(1.0 + randomRange(-0.001, 0.001), amp)
         .pan(staticControl(pan + randomRange(-0.1, 0.1)))
-        .play(start)),
+        .play(start, shouldWriteToScore = ConcreteMusic10Common.WRITE_TO_SCORE)),
     LOW_SOUND -> Seq(
       (start, amp, pan) => synthPlayer(METAL_HIT_1)
         .playMono(1.0 + randomRange(-0.001, 0.001), amp * 80)
         .lowPass(staticControl(148 * METAL_HIT_1_RATE))
         .pan(staticControl(pan + randomRange(-0.1, 0.1)))
-        .play(start),
+        .play(start, outputBus = 0, shouldWriteToScore = ConcreteMusic10Common.WRITE_TO_SCORE),
       (start, amp, pan) => synthPlayer(METAL_HIT_1)
         .playMono(1.0 + randomRange(-0.001, 0.001), amp * 50)
         .lowPass(staticControl(148))
         .pan(staticControl(pan + randomRange(-0.1, 0.1)))
-        .play(start)),
+        .play(start, outputBus = 0, shouldWriteToScore = ConcreteMusic10Common.WRITE_TO_SCORE)),
     MIDDLE_SOUND -> Seq(
       (start, amp, pan) => synthPlayer(METAL_HIT_1)
         .playMono(1.0 + randomRange(-0.001, 0.001), amp * 5)
         .highPass(staticControl(148))
         .lowPass(staticControl(647))
         .pan(staticControl(pan + randomRange(-0.1, 0.1)))
-        .play(start),
+        .play(start, outputBus = 2, shouldWriteToScore = ConcreteMusic10Common.WRITE_TO_SCORE),
       (start, amp, pan) => synthPlayer(METAL_HIT_1)
         .playMono(1.0 + randomRange(-0.001, 0.001), amp)
         .highPass(staticControl(647))
         .lowPass(staticControl(1569))
         .pan(staticControl(pan + randomRange(-0.1, 0.1)))
-        .play(start),
+        .play(start, outputBus = 2, shouldWriteToScore = ConcreteMusic10Common.WRITE_TO_SCORE),
       (start, amp, pan) => synthPlayer(METAL_HIT_1)
         .playMono(1.0 + randomRange(-0.001, 0.001), amp)
         .highPass(staticControl(1569))
         .lowPass(staticControl(3420))
         .pan(staticControl(pan + randomRange(-0.1, 0.1)))
-        .play(start)),
+        .play(start, outputBus = 2, shouldWriteToScore = ConcreteMusic10Common.WRITE_TO_SCORE)),
     HIGH_SOUND -> Seq(
       (start, amp, pan) => synthPlayer(METAL_HIT_1)
         .playMono(1.0 + randomRange(-0.001, 0.001), amp)
         .highPass(staticControl(3420))
         .lowPass(staticControl(4658))
         .pan(staticControl(pan + randomRange(-0.1, 0.1)))
-        .play(start),
+        .play(start, outputBus = 4, shouldWriteToScore = ConcreteMusic10Common.WRITE_TO_SCORE),
       (start, amp, pan) => synthPlayer(METAL_HIT_1)
         .playMono(1.0 + randomRange(-0.001, 0.001), amp)
         .highPass(staticControl(4658))
         .lowPass(staticControl(8774))
         .pan(staticControl(pan + randomRange(-0.1, 0.1)))
-        .play(start),
+        .play(start, outputBus = 4, shouldWriteToScore = ConcreteMusic10Common.WRITE_TO_SCORE),
       (start, amp, pan) => synthPlayer(METAL_HIT_1)
         .playMono(1.0 + randomRange(-0.001, 0.001), amp * 5)
         .highPass(staticControl(8774))
         .pan(staticControl(pan + randomRange(-0.1, 0.1)))
-        .play(start)))
+        .play(start, outputBus = 4, shouldWriteToScore = ConcreteMusic10Common.WRITE_TO_SCORE)))
 
   lazy val METAL_HIT_1_MIXES = SoundMixes(
     METAL_HIT_1, METAL_HIT_1_VARIANTS,
@@ -85,55 +85,55 @@ object MetalHitSound {
       (start, amp, pan) => synthPlayer(METAL_HIT_2)
         .playMono(1.0 + randomRange(-0.001, 0.001), amp)
         .pan(staticControl(pan + randomRange(-0.1, 0.1)))
-        .play(start)),
+        .play(start, shouldWriteToScore = ConcreteMusic10Common.WRITE_TO_SCORE)),
     LOW_SOUND -> Seq(
       (start, amp, pan) => synthPlayer(METAL_HIT_2)
         .playMono(1.0 + randomRange(-0.001, 0.001), amp * 80)
         .lowPass(staticControl(184 * METAL_HIT_2_RATE))
         .pan(staticControl(pan + randomRange(-0.1, 0.1)))
-        .play(start),
+        .play(start, outputBus = 0, shouldWriteToScore = ConcreteMusic10Common.WRITE_TO_SCORE),
       (start, amp, pan) => synthPlayer(METAL_HIT_2)
         .playMono(1.0 + randomRange(-0.001, 0.001), amp * 50)
         .lowPass(staticControl(184))
         .pan(staticControl(pan + randomRange(-0.1, 0.1)))
-        .play(start)),
+        .play(start, outputBus = 0, shouldWriteToScore = ConcreteMusic10Common.WRITE_TO_SCORE)),
     MIDDLE_SOUND -> Seq(
       (start, amp, pan) => synthPlayer(METAL_HIT_2)
         .playMono(1.0 + randomRange(-0.001, 0.001), amp * 5)
         .highPass(staticControl(184))
         .lowPass(staticControl(661))
         .pan(staticControl(pan + randomRange(-0.1, 0.1)))
-        .play(start),
+        .play(start, outputBus = 2, shouldWriteToScore = ConcreteMusic10Common.WRITE_TO_SCORE),
       (start, amp, pan) => synthPlayer(METAL_HIT_2)
         .playMono(1.0 + randomRange(-0.001, 0.001), amp)
         .highPass(staticControl(661))
         .lowPass(staticControl(1076))
         .pan(staticControl(pan + randomRange(-0.1, 0.1)))
-        .play(start),
+        .play(start, outputBus = 2, shouldWriteToScore = ConcreteMusic10Common.WRITE_TO_SCORE),
       (start, amp, pan) => synthPlayer(METAL_HIT_2)
         .playMono(1.0 + randomRange(-0.001, 0.001), amp)
         .highPass(staticControl(1076))
         .lowPass(staticControl(4381))
         .pan(staticControl(pan + randomRange(-0.1, 0.1)))
-        .play(start)),
+        .play(start, outputBus = 2, shouldWriteToScore = ConcreteMusic10Common.WRITE_TO_SCORE)),
     HIGH_SOUND -> Seq(
       (start, amp, pan) => synthPlayer(METAL_HIT_2)
         .playMono(1.0 + randomRange(-0.001, 0.001), amp)
         .highPass(staticControl(4381))
         .lowPass(staticControl(6431))
         .pan(staticControl(pan + randomRange(-0.1, 0.1)))
-        .play(start),
+        .play(start, outputBus = 4, shouldWriteToScore = ConcreteMusic10Common.WRITE_TO_SCORE),
       (start, amp, pan) => synthPlayer(METAL_HIT_2)
         .playMono(1.0 + randomRange(-0.001, 0.001), amp)
         .highPass(staticControl(6431))
         .lowPass(staticControl(11309))
         .pan(staticControl(pan + randomRange(-0.1, 0.1)))
-        .play(start),
+        .play(start, outputBus = 4, shouldWriteToScore = ConcreteMusic10Common.WRITE_TO_SCORE),
       (start, amp, pan) => synthPlayer(METAL_HIT_2)
         .playMono(1.0 + randomRange(-0.001, 0.001), amp * 5)
         .highPass(staticControl(11309))
         .pan(staticControl(pan + randomRange(-0.1, 0.1)))
-        .play(start)))
+        .play(start, outputBus = 4, shouldWriteToScore = ConcreteMusic10Common.WRITE_TO_SCORE)))
 
   lazy val METAL_HIT_2_MIXES = SoundMixes(
     METAL_HIT_2, METAL_HIT_2_VARIANTS,
@@ -179,7 +179,7 @@ object MetalHitSound {
             .ring(staticControl(LOWEST_SPECTRUM(note + 7)))
             .ring(staticControl(LOWEST_SPECTRUM(note + 8)))
             .pan(staticControl(pan))
-            .playWithDuration(start, duration)
+            .playWithDuration(start, duration, outputBus = 6, shouldWriteToScore = ConcreteMusic10Common.WRITE_TO_SCORE)
         },
         (start, note, amp, attackTime, duration, pan) => {
           synthPlayer()
@@ -187,7 +187,7 @@ object MetalHitSound {
             .ring(staticControl(LOW_SPECTRUM(note + 1)))
             .ring(staticControl(LOW_SPECTRUM(note + 2)))
             .pan(staticControl(pan))
-            .playWithDuration(start, duration)
+            .playWithDuration(start, duration, outputBus = 8, shouldWriteToScore = ConcreteMusic10Common.WRITE_TO_SCORE)
         }
       ),
       MIDDLE_SOUND -> Seq(
@@ -197,7 +197,7 @@ object MetalHitSound {
             .ring(staticControl(MIDDLE_SPECTRUM(note + 11)))
             .ring(staticControl(MIDDLE_SPECTRUM(note + 12)))
             .pan(staticControl(pan))
-            .playWithDuration(start, duration)
+            .playWithDuration(start, duration, outputBus = 10, shouldWriteToScore = ConcreteMusic10Common.WRITE_TO_SCORE)
         }
       ),
       HIGH_SOUND -> Seq(
@@ -207,7 +207,7 @@ object MetalHitSound {
             .ring(staticControl(HIGH_SPECTRUM(note + 13)))
             .ring(staticControl(HIGH_SPECTRUM(note + 14)))
             .pan(staticControl(pan))
-            .playWithDuration(start, duration)
+            .playWithDuration(start, duration, outputBus = 12, shouldWriteToScore = ConcreteMusic10Common.WRITE_TO_SCORE)
         }
       )
     )
@@ -236,7 +236,7 @@ object MetalHitSound {
             .ring(staticControl(LOWEST_SPECTRUM(note + 0)))
             .ring(staticControl(LOWEST_SPECTRUM(note + 1)))
             .pan(staticControl(pan))
-            .playWithDuration(start, duration)
+            .playWithDuration(start, duration, shouldWriteToScore = ConcreteMusic10Common.WRITE_TO_SCORE)
         },
         (start, note, amp, attackTime, duration, pan) => {
           synthPlayer()
@@ -244,7 +244,7 @@ object MetalHitSound {
             .ring(staticControl(LOW_SPECTRUM(note + 1)))
             .ring(staticControl(LOW_SPECTRUM(note + 2)))
             .pan(staticControl(pan))
-            .playWithDuration(start, duration)
+            .playWithDuration(start, duration, shouldWriteToScore = ConcreteMusic10Common.WRITE_TO_SCORE)
         }
       ),
       MIDDLE_SOUND -> Seq(
@@ -254,7 +254,7 @@ object MetalHitSound {
             .ring(staticControl(MIDDLE_SPECTRUM(note + 10)))
             .ring(staticControl(MIDDLE_SPECTRUM(note + 11)))
             .pan(staticControl(pan))
-            .playWithDuration(start, duration)
+            .playWithDuration(start, duration, shouldWriteToScore = ConcreteMusic10Common.WRITE_TO_SCORE)
         }
       ),
       HIGH_SOUND -> Seq(
@@ -264,7 +264,7 @@ object MetalHitSound {
             .ring(staticControl(HIGH_SPECTRUM(note + 15)))
             .ring(staticControl(HIGH_SPECTRUM(note + 16)))
             .pan(staticControl(pan))
-            .playWithDuration(start, duration)
+            .playWithDuration(start, duration, shouldWriteToScore = ConcreteMusic10Common.WRITE_TO_SCORE)
         }
       )
     )

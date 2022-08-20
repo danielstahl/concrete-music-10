@@ -118,4 +118,5 @@ object ConcreteMusic10Common {
 
   implicit val client: SuperColliderClient = SuperColliderClient()
   val synthPlayer = SynthPlayer(soundPlays = soundPlays, numberOfOutputBuses = 2, bufferedPlayback = true)
+  val WRITE_TO_SCORE = true
 }

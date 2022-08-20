@@ -12,37 +12,37 @@ object WoodScratchSound {
       (start, amp, pan) => synthPlayer(WOOD_SCRATCH_1)
         .playMono(1.0 + randomRange(-0.001, 0.001), amp)
         .pan(staticControl(pan + randomRange(-0.1, 0.1)))
-        .play(start)),
+        .play(start, shouldWriteToScore = ConcreteMusic10Common.WRITE_TO_SCORE)),
     LOW_SOUND -> Seq(
       (start, amp, pan) => synthPlayer(WOOD_SCRATCH_1)
         .playMono(1.0 + randomRange(-0.001, 0.001), amp * 3)
         .lowPass(staticControl(398 * WOOD_SCRATCH_1_RATE))
         .pan(staticControl(pan + randomRange(-0.1, 0.1)))
-        .play(start),
+        .play(start, outputBus = 54, shouldWriteToScore = ConcreteMusic10Common.WRITE_TO_SCORE),
       (start, amp, pan) => synthPlayer(WOOD_SCRATCH_1)
         .playMono(1.0 + randomRange(-0.001, 0.001), amp * 1)
         .lowPass(staticControl(398))
         .pan(staticControl(pan + randomRange(-0.1, 0.1)))
-        .play(start)),
+        .play(start, outputBus = 54, shouldWriteToScore = ConcreteMusic10Common.WRITE_TO_SCORE)),
     MIDDLE_SOUND -> Seq(
       (start, amp, pan) => synthPlayer(WOOD_SCRATCH_1)
         .playMono(1.0 + randomRange(-0.001, 0.001), amp)
         .highPass(staticControl(398))
         .lowPass(staticControl(1472))
         .pan(staticControl(pan + randomRange(-0.1, 0.1)))
-        .play(start),
+        .play(start, outputBus = 56, shouldWriteToScore = ConcreteMusic10Common.WRITE_TO_SCORE),
       (start, amp, pan) => synthPlayer(WOOD_SCRATCH_1)
         .playMono(1.0 + randomRange(-0.001, 0.001), amp)
         .highPass(staticControl(1472))
         .lowPass(staticControl(2299))
         .pan(staticControl(pan + randomRange(-0.1, 0.1)))
-        .play(start),
+        .play(start, outputBus = 56, shouldWriteToScore = ConcreteMusic10Common.WRITE_TO_SCORE),
       (start, amp, pan) => synthPlayer(WOOD_SCRATCH_1)
         .playMono(1.0 + randomRange(-0.001, 0.001), amp)
         .highPass(staticControl(2299))
         .lowPass(staticControl(3642))
         .pan(staticControl(pan + randomRange(-0.1, 0.1)))
-        .play(start)),
+        .play(start, outputBus = 56, shouldWriteToScore = ConcreteMusic10Common.WRITE_TO_SCORE)),
     // 398 (peak), 1472, 2299, 3642, 4495, 7342, 14677
     HIGH_SOUND -> Seq(
       (start, amp, pan) => synthPlayer(WOOD_SCRATCH_1)
@@ -50,24 +50,24 @@ object WoodScratchSound {
         .highPass(staticControl(3642))
         .lowPass(staticControl(4495))
         .pan(staticControl(pan + randomRange(-0.1, 0.1)))
-        .play(start),
+        .play(start, outputBus = 58, shouldWriteToScore = ConcreteMusic10Common.WRITE_TO_SCORE),
       (start, amp, pan) => synthPlayer(WOOD_SCRATCH_1)
         .playMono(1.0 + randomRange(-0.001, 0.001), amp)
         .highPass(staticControl(4495))
         .lowPass(staticControl(7342))
         .pan(staticControl(pan + randomRange(-0.1, 0.1)))
-        .play(start),
+        .play(start, outputBus = 58, shouldWriteToScore = ConcreteMusic10Common.WRITE_TO_SCORE),
       (start, amp, pan) => synthPlayer(WOOD_SCRATCH_1)
         .playMono(1.0 + randomRange(-0.001, 0.001), amp)
         .highPass(staticControl(7342))
         .lowPass(staticControl(14677))
         .pan(staticControl(pan + randomRange(-0.1, 0.1)))
-        .play(start),
+        .play(start, outputBus = 58, shouldWriteToScore = ConcreteMusic10Common.WRITE_TO_SCORE),
       (start, amp, pan) => synthPlayer(WOOD_SCRATCH_1)
         .playMono(1.0 + randomRange(-0.001, 0.001), amp)
         .highPass(staticControl(14677))
         .pan(staticControl(pan + randomRange(-0.1, 0.1)))
-        .play(start)))
+        .play(start, outputBus = 58, shouldWriteToScore = ConcreteMusic10Common.WRITE_TO_SCORE)))
 
   lazy val WOOD_SCRATCH_1_MIXES = SoundMixes(
     WOOD_SCRATCH_1, WOOD_SCRATCH_1_VARIANTS, Map(
@@ -91,37 +91,37 @@ object WoodScratchSound {
       (start, amp, pan) => synthPlayer(WOOD_SCRATCH_2)
         .playMono(1.0 + randomRange(-0.001, 0.001), amp)
         .pan(staticControl(pan + randomRange(-0.1, 0.1)))
-        .play(start)),
+        .play(start, shouldWriteToScore = ConcreteMusic10Common.WRITE_TO_SCORE)),
     LOW_SOUND -> Seq(
       (start, amp, pan) => synthPlayer(WOOD_SCRATCH_2)
         .playMono(1.0 + randomRange(-0.001, 0.001), amp * 3)
         .lowPass(staticControl(623 * WOOD_SCRATCH_2_RATE))
         .pan(staticControl(pan + randomRange(-0.1, 0.1)))
-        .play(start),
+        .play(start, outputBus = 54, shouldWriteToScore = ConcreteMusic10Common.WRITE_TO_SCORE),
       (start, amp, pan) => synthPlayer(WOOD_SCRATCH_2)
         .playMono(1.0 + randomRange(-0.001, 0.001), amp * 1)
         .lowPass(staticControl(623))
         .pan(staticControl(pan + randomRange(-0.1, 0.1)))
-        .play(start)),
+        .play(start, outputBus = 54, shouldWriteToScore = ConcreteMusic10Common.WRITE_TO_SCORE)),
     MIDDLE_SOUND -> Seq(
       (start, amp, pan) => synthPlayer(WOOD_SCRATCH_2)
         .playMono(1.0 + randomRange(-0.001, 0.001), amp)
         .highPass(staticControl(623))
         .lowPass(staticControl(1467))
         .pan(staticControl(pan + randomRange(-0.1, 0.1)))
-        .play(start),
+        .play(start, outputBus = 56, shouldWriteToScore = ConcreteMusic10Common.WRITE_TO_SCORE),
       (start, amp, pan) => synthPlayer(WOOD_SCRATCH_2)
         .playMono(1.0 + randomRange(-0.001, 0.001), amp)
         .highPass(staticControl(1467))
         .lowPass(staticControl(3022))
         .pan(staticControl(pan + randomRange(-0.1, 0.1)))
-        .play(start),
+        .play(start, outputBus = 56, shouldWriteToScore = ConcreteMusic10Common.WRITE_TO_SCORE),
       (start, amp, pan) => synthPlayer(WOOD_SCRATCH_2)
         .playMono(1.0 + randomRange(-0.001, 0.001), amp)
         .highPass(staticControl(3022))
         .lowPass(staticControl(3872))
         .pan(staticControl(pan + randomRange(-0.1, 0.1)))
-        .play(start)),
+        .play(start, outputBus = 56, shouldWriteToScore = ConcreteMusic10Common.WRITE_TO_SCORE)),
     // 623 (peak), 1467, 3022, 3872, 6188, 8966, 11589
     HIGH_SOUND -> Seq(
       (start, amp, pan) => synthPlayer(WOOD_SCRATCH_2)
@@ -129,24 +129,24 @@ object WoodScratchSound {
         .highPass(staticControl(3872))
         .lowPass(staticControl(6188))
         .pan(staticControl(pan + randomRange(-0.1, 0.1)))
-        .play(start),
+        .play(start, outputBus = 58, shouldWriteToScore = ConcreteMusic10Common.WRITE_TO_SCORE),
       (start, amp, pan) => synthPlayer(WOOD_SCRATCH_2)
         .playMono(1.0 + randomRange(-0.001, 0.001), amp)
         .highPass(staticControl(6188))
         .lowPass(staticControl(8966))
         .pan(staticControl(pan + randomRange(-0.1, 0.1)))
-        .play(start),
+        .play(start, outputBus = 58, shouldWriteToScore = ConcreteMusic10Common.WRITE_TO_SCORE),
       (start, amp, pan) => synthPlayer(WOOD_SCRATCH_2)
         .playMono(1.0 + randomRange(-0.001, 0.001), amp)
         .highPass(staticControl(8966))
         .lowPass(staticControl(11589))
         .pan(staticControl(pan + randomRange(-0.1, 0.1)))
-        .play(start),
+        .play(start, outputBus = 58, shouldWriteToScore = ConcreteMusic10Common.WRITE_TO_SCORE),
       (start, amp, pan) => synthPlayer(WOOD_SCRATCH_2)
         .playMono(1.0 + randomRange(-0.001, 0.001), amp)
         .highPass(staticControl(11589))
         .pan(staticControl(pan + randomRange(-0.1, 0.1)))
-        .play(start)))
+        .play(start, outputBus = 58, shouldWriteToScore = ConcreteMusic10Common.WRITE_TO_SCORE)))
 
   lazy val WOOD_SCRATCH_2_MIXES = SoundMixes(
     WOOD_SCRATCH_2, WOOD_SCRATCH_2_VARIANTS,
@@ -171,43 +171,43 @@ object WoodScratchSound {
       (start, amp, pan) => synthPlayer(WOOD_SCRATCH_3)
         .playMono(1.0 + randomRange(-0.001, 0.001), amp)
         .pan(staticControl(pan + randomRange(-0.1, 0.1)))
-        .play(start)),
+        .play(start, shouldWriteToScore = ConcreteMusic10Common.WRITE_TO_SCORE)),
     LOW_SOUND -> Seq(
       (start, amp, pan) => synthPlayer(WOOD_SCRATCH_3)
         .playMono(1.0 + randomRange(-0.001, 0.001), amp * 3)
         .lowPass(staticControl(661 * WOOD_SCRATCH_3_RATE))
         .pan(staticControl(pan + randomRange(-0.1, 0.1)))
-        .play(start),
+        .play(start, outputBus = 54, shouldWriteToScore = ConcreteMusic10Common.WRITE_TO_SCORE),
       (start, amp, pan) => synthPlayer(WOOD_SCRATCH_3)
         .playMono(1.0 + randomRange(-0.001, 0.001), amp * 1)
         .lowPass(staticControl(661))
         .pan(staticControl(pan + randomRange(-0.1, 0.1)))
-        .play(start)),
+        .play(start, outputBus = 54, shouldWriteToScore = ConcreteMusic10Common.WRITE_TO_SCORE)),
     MIDDLE_SOUND -> Seq(
       (start, amp, pan) => synthPlayer(WOOD_SCRATCH_3)
         .playMono(1.0 + randomRange(-0.001, 0.001), amp)
         .highPass(staticControl(661))
         .lowPass(staticControl(1501))
         .pan(staticControl(pan + randomRange(-0.1, 0.1)))
-        .play(start),
+        .play(start, outputBus = 56, shouldWriteToScore = ConcreteMusic10Common.WRITE_TO_SCORE),
       (start, amp, pan) => synthPlayer(WOOD_SCRATCH_3)
         .playMono(1.0 + randomRange(-0.001, 0.001), amp)
         .highPass(staticControl(1501))
         .lowPass(staticControl(1996))
         .pan(staticControl(pan + randomRange(-0.1, 0.1)))
-        .play(start),
+        .play(start, outputBus = 56, shouldWriteToScore = ConcreteMusic10Common.WRITE_TO_SCORE),
       (start, amp, pan) => synthPlayer(WOOD_SCRATCH_3)
         .playMono(1.0 + randomRange(-0.001, 0.001), amp)
         .highPass(staticControl(1996))
         .lowPass(staticControl(2326))
         .pan(staticControl(pan + randomRange(-0.1, 0.1)))
-        .play(start),
+        .play(start, outputBus = 56, shouldWriteToScore = ConcreteMusic10Common.WRITE_TO_SCORE),
       (start, amp, pan) => synthPlayer(WOOD_SCRATCH_3)
         .playMono(1.0 + randomRange(-0.001, 0.001), amp)
         .highPass(staticControl(2326))
         .lowPass(staticControl(3156))
         .pan(staticControl(pan + randomRange(-0.1, 0.1)))
-        .play(start)),
+        .play(start, outputBus = 56, shouldWriteToScore = ConcreteMusic10Common.WRITE_TO_SCORE)),
     // 661 (peak), 1501, 1996, 2326, 3156, 5215, 9061, 10836
     HIGH_SOUND -> Seq(
       (start, amp, pan) => synthPlayer(WOOD_SCRATCH_3)
@@ -215,24 +215,24 @@ object WoodScratchSound {
         .highPass(staticControl(3156))
         .lowPass(staticControl(5215))
         .pan(staticControl(pan + randomRange(-0.1, 0.1)))
-        .play(start),
+        .play(start, outputBus = 58, shouldWriteToScore = ConcreteMusic10Common.WRITE_TO_SCORE),
       (start, amp, pan) => synthPlayer(WOOD_SCRATCH_3)
         .playMono(1.0 + randomRange(-0.001, 0.001), amp)
         .highPass(staticControl(5215))
         .lowPass(staticControl(9061))
         .pan(staticControl(pan + randomRange(-0.1, 0.1)))
-        .play(start),
+        .play(start, outputBus = 58, shouldWriteToScore = ConcreteMusic10Common.WRITE_TO_SCORE),
       (start, amp, pan) => synthPlayer(WOOD_SCRATCH_3)
         .playMono(1.0 + randomRange(-0.001, 0.001), amp)
         .highPass(staticControl(9061))
         .lowPass(staticControl(10836))
         .pan(staticControl(pan + randomRange(-0.1, 0.1)))
-        .play(start),
+        .play(start, outputBus = 58, shouldWriteToScore = ConcreteMusic10Common.WRITE_TO_SCORE),
       (start, amp, pan) => synthPlayer(WOOD_SCRATCH_3)
         .playMono(1.0 + randomRange(-0.001, 0.001), amp)
         .highPass(staticControl(10836))
         .pan(staticControl(pan + randomRange(-0.1, 0.1)))
-        .play(start))
+        .play(start, outputBus = 58, shouldWriteToScore = ConcreteMusic10Common.WRITE_TO_SCORE))
   )
 
   lazy val WOOD_SCRATCH_3_MIXES = SoundMixes(
@@ -258,37 +258,37 @@ object WoodScratchSound {
       (start, amp, pan) => synthPlayer(WOOD_SCRATCH_4)
         .playMono(1.0 + randomRange(-0.001, 0.001), amp)
         .pan(staticControl(pan + randomRange(-0.1, 0.1)))
-        .play(start)),
+        .play(start, shouldWriteToScore = ConcreteMusic10Common.WRITE_TO_SCORE)),
     LOW_SOUND -> Seq(
       (start, amp, pan) => synthPlayer(WOOD_SCRATCH_4)
         .playMono(1.0 + randomRange(-0.001, 0.001), amp * 3)
         .lowPass(staticControl(685 * WOOD_SCRATCH_4_RATE))
         .pan(staticControl(pan + randomRange(-0.1, 0.1)))
-        .play(start),
+        .play(start, outputBus = 54, shouldWriteToScore = ConcreteMusic10Common.WRITE_TO_SCORE),
       (start, amp, pan) => synthPlayer(WOOD_SCRATCH_4)
         .playMono(1.0 + randomRange(-0.001, 0.001), amp * 1)
         .lowPass(staticControl(685))
         .pan(staticControl(pan + randomRange(-0.1, 0.1)))
-        .play(start)),
+        .play(start, outputBus = 54, shouldWriteToScore = ConcreteMusic10Common.WRITE_TO_SCORE)),
     MIDDLE_SOUND -> Seq(
       (start, amp, pan) => synthPlayer(WOOD_SCRATCH_4)
         .playMono(1.0 + randomRange(-0.001, 0.001), amp)
         .highPass(staticControl(685))
         .lowPass(staticControl(1320))
         .pan(staticControl(pan + randomRange(-0.1, 0.1)))
-        .play(start),
+        .play(start, outputBus = 56, shouldWriteToScore = ConcreteMusic10Common.WRITE_TO_SCORE),
       (start, amp, pan) => synthPlayer(WOOD_SCRATCH_4)
         .playMono(1.0 + randomRange(-0.001, 0.001), amp)
         .highPass(staticControl(1320))
         .lowPass(staticControl(2529))
         .pan(staticControl(pan + randomRange(-0.1, 0.1)))
-        .play(start),
+        .play(start, outputBus = 56, shouldWriteToScore = ConcreteMusic10Common.WRITE_TO_SCORE),
       (start, amp, pan) => synthPlayer(WOOD_SCRATCH_4)
         .playMono(1.0 + randomRange(-0.001, 0.001), amp)
         .highPass(staticControl(2529))
         .lowPass(staticControl(3713))
         .pan(staticControl(pan + randomRange(-0.1, 0.1)))
-        .play(start)),
+        .play(start, outputBus = 56, shouldWriteToScore = ConcreteMusic10Common.WRITE_TO_SCORE)),
     // 685 (peak), 1320, 2529, 3713, 4956, 6408, 8062, 9716, 12263
     HIGH_SOUND -> Seq(
       (start, amp, pan) => synthPlayer(WOOD_SCRATCH_4)
@@ -296,36 +296,36 @@ object WoodScratchSound {
         .highPass(staticControl(3713))
         .lowPass(staticControl(4956))
         .pan(staticControl(pan + randomRange(-0.1, 0.1)))
-        .play(start),
+        .play(start, outputBus = 58, shouldWriteToScore = ConcreteMusic10Common.WRITE_TO_SCORE),
       (start, amp, pan) => synthPlayer(WOOD_SCRATCH_4)
         .playMono(1.0 + randomRange(-0.001, 0.001), amp)
         .highPass(staticControl(4956))
         .lowPass(staticControl(6408))
         .pan(staticControl(pan + randomRange(-0.1, 0.1)))
-        .play(start),
+        .play(start, outputBus = 58, shouldWriteToScore = ConcreteMusic10Common.WRITE_TO_SCORE),
       (start, amp, pan) => synthPlayer(WOOD_SCRATCH_4)
         .playMono(1.0 + randomRange(-0.001, 0.001), amp)
         .highPass(staticControl(6408))
         .lowPass(staticControl(8062))
         .pan(staticControl(pan + randomRange(-0.1, 0.1)))
-        .play(start),
+        .play(start, outputBus = 58, shouldWriteToScore = ConcreteMusic10Common.WRITE_TO_SCORE),
       (start, amp, pan) => synthPlayer(WOOD_SCRATCH_4)
         .playMono(1.0 + randomRange(-0.001, 0.001), amp)
         .highPass(staticControl(8062))
         .lowPass(staticControl(9716))
         .pan(staticControl(pan + randomRange(-0.1, 0.1)))
-        .play(start),
+        .play(start, outputBus = 58, shouldWriteToScore = ConcreteMusic10Common.WRITE_TO_SCORE),
       (start, amp, pan) => synthPlayer(WOOD_SCRATCH_4)
         .playMono(1.0 + randomRange(-0.001, 0.001), amp)
         .highPass(staticControl(9716))
         .lowPass(staticControl(12263))
         .pan(staticControl(pan + randomRange(-0.1, 0.1)))
-        .play(start),
+        .play(start, outputBus = 58, shouldWriteToScore = ConcreteMusic10Common.WRITE_TO_SCORE),
       (start, amp, pan) => synthPlayer(WOOD_SCRATCH_4)
         .playMono(1.0 + randomRange(-0.001, 0.001), amp)
         .highPass(staticControl(12263))
         .pan(staticControl(pan + randomRange(-0.1, 0.1)))
-        .play(start))
+        .play(start, outputBus = 58, shouldWriteToScore = ConcreteMusic10Common.WRITE_TO_SCORE))
   )
 
   lazy val WOOD_SCRATCH_4_MIXES = SoundMixes(
@@ -371,7 +371,7 @@ object WoodScratchSound {
             .ring(staticControl(LOWEST_SPECTRUM(note + 2)))
             .ring(staticControl(LOWEST_SPECTRUM(note + 4)))
             .pan(staticControl(pan))
-            .playWithDuration(start, duration)
+            .playWithDuration(start, duration, shouldWriteToScore = ConcreteMusic10Common.WRITE_TO_SCORE)
         },
         (start, note, amp, attackTime, duration, pan) => {
           synthPlayer()
@@ -379,7 +379,7 @@ object WoodScratchSound {
             .ring(staticControl(LOW_SPECTRUM(note + 1)))
             .ring(staticControl(LOW_SPECTRUM(note + 2)))
             .pan(staticControl(pan))
-            .playWithDuration(start, duration)
+            .playWithDuration(start, duration, shouldWriteToScore = ConcreteMusic10Common.WRITE_TO_SCORE)
         }
       ),
       MIDDLE_SOUND -> Seq(
@@ -390,7 +390,7 @@ object WoodScratchSound {
             .ring(staticControl(MIDDLE_SPECTRUM(note + 0)))
             .ring(staticControl(MIDDLE_SPECTRUM(note + 1)))
             .pan(staticControl(pan))
-            .playWithDuration(start, duration)
+            .playWithDuration(start, duration, shouldWriteToScore = ConcreteMusic10Common.WRITE_TO_SCORE)
         }
       ),
       HIGH_SOUND -> Seq(
@@ -401,7 +401,7 @@ object WoodScratchSound {
             .ring(staticControl(HIGH_SPECTRUM(note + 3)))
             .ring(staticControl(HIGH_SPECTRUM(note + 6)))
             .pan(staticControl(pan))
-            .playWithDuration(start, duration)
+            .playWithDuration(start, duration, shouldWriteToScore = ConcreteMusic10Common.WRITE_TO_SCORE)
         }
       )
     )
@@ -432,7 +432,7 @@ object WoodScratchSound {
             .ring(staticControl(LOWEST_SPECTRUM(note + 2)))
             .ring(staticControl(LOWEST_SPECTRUM(note + 4)))
             .pan(staticControl(pan))
-            .playWithDuration(start, duration)
+            .playWithDuration(start, duration, shouldWriteToScore = ConcreteMusic10Common.WRITE_TO_SCORE)
         },
         (start, note, amp, attackTime, duration, pan) => {
           synthPlayer()
@@ -440,7 +440,7 @@ object WoodScratchSound {
             .ring(staticControl(LOW_SPECTRUM(note + 1)))
             .ring(staticControl(LOW_SPECTRUM(note + 2)))
             .pan(staticControl(pan))
-            .playWithDuration(start, duration)
+            .playWithDuration(start, duration, shouldWriteToScore = ConcreteMusic10Common.WRITE_TO_SCORE)
         }
       ),
       MIDDLE_SOUND -> Seq(
@@ -451,7 +451,7 @@ object WoodScratchSound {
             .ring(staticControl(MIDDLE_SPECTRUM(note + 0)))
             .ring(staticControl(MIDDLE_SPECTRUM(note + 1)))
             .pan(staticControl(pan))
-            .playWithDuration(start, duration)
+            .playWithDuration(start, duration, shouldWriteToScore = ConcreteMusic10Common.WRITE_TO_SCORE)
         }
       ),
       HIGH_SOUND -> Seq(
@@ -462,7 +462,7 @@ object WoodScratchSound {
             .ring(staticControl(HIGH_SPECTRUM(note + 3)))
             .ring(staticControl(HIGH_SPECTRUM(note + 6)))
             .pan(staticControl(pan))
-            .playWithDuration(start, duration)
+            .playWithDuration(start, duration, shouldWriteToScore = ConcreteMusic10Common.WRITE_TO_SCORE)
         }
       )
     )
@@ -492,7 +492,7 @@ object WoodScratchSound {
             .ring(staticControl(LOWEST_SPECTRUM(note + 2)))
             .ring(staticControl(LOWEST_SPECTRUM(note + 4)))
             .pan(staticControl(pan))
-            .playWithDuration(start, duration)
+            .playWithDuration(start, duration, shouldWriteToScore = ConcreteMusic10Common.WRITE_TO_SCORE)
         },
         (start, note, amp, attackTime, duration, pan) => {
           synthPlayer()
@@ -500,7 +500,7 @@ object WoodScratchSound {
             .ring(staticControl(LOW_SPECTRUM(note + 1)))
             .ring(staticControl(LOW_SPECTRUM(note + 2)))
             .pan(staticControl(pan))
-            .playWithDuration(start, duration)
+            .playWithDuration(start, duration, shouldWriteToScore = ConcreteMusic10Common.WRITE_TO_SCORE)
         }
       ),
       MIDDLE_SOUND -> Seq(
@@ -511,7 +511,7 @@ object WoodScratchSound {
             .ring(staticControl(MIDDLE_SPECTRUM(note + 0)))
             .ring(staticControl(MIDDLE_SPECTRUM(note + 1)))
             .pan(staticControl(pan))
-            .playWithDuration(start, duration)
+            .playWithDuration(start, duration, shouldWriteToScore = ConcreteMusic10Common.WRITE_TO_SCORE)
         }
       ),
       HIGH_SOUND -> Seq(
@@ -522,7 +522,7 @@ object WoodScratchSound {
             .ring(staticControl(HIGH_SPECTRUM(note + 3)))
             .ring(staticControl(HIGH_SPECTRUM(note + 6)))
             .pan(staticControl(pan))
-            .playWithDuration(start, duration)
+            .playWithDuration(start, duration, shouldWriteToScore = ConcreteMusic10Common.WRITE_TO_SCORE)
         }
       )
     )
@@ -552,7 +552,7 @@ object WoodScratchSound {
             .ring(staticControl(LOWEST_SPECTRUM(note + 2)))
             .ring(staticControl(LOWEST_SPECTRUM(note + 4)))
             .pan(staticControl(pan))
-            .playWithDuration(start, duration)
+            .playWithDuration(start, duration, shouldWriteToScore = ConcreteMusic10Common.WRITE_TO_SCORE)
         },
         (start, note, amp, attackTime, duration, pan) => {
           synthPlayer()
@@ -560,7 +560,7 @@ object WoodScratchSound {
             .ring(staticControl(LOW_SPECTRUM(note + 1)))
             .ring(staticControl(LOW_SPECTRUM(note + 2)))
             .pan(staticControl(pan))
-            .playWithDuration(start, duration)
+            .playWithDuration(start, duration, shouldWriteToScore = ConcreteMusic10Common.WRITE_TO_SCORE)
         }
       ),
       MIDDLE_SOUND -> Seq(
@@ -571,7 +571,7 @@ object WoodScratchSound {
             .ring(staticControl(MIDDLE_SPECTRUM(note + 0)))
             .ring(staticControl(MIDDLE_SPECTRUM(note + 1)))
             .pan(staticControl(pan))
-            .playWithDuration(start, duration)
+            .playWithDuration(start, duration, shouldWriteToScore = ConcreteMusic10Common.WRITE_TO_SCORE)
         }
       ),
       HIGH_SOUND -> Seq(
@@ -582,7 +582,7 @@ object WoodScratchSound {
             .ring(staticControl(HIGH_SPECTRUM(note + 3)))
             .ring(staticControl(HIGH_SPECTRUM(note + 6)))
             .pan(staticControl(pan))
-            .playWithDuration(start, duration)
+            .playWithDuration(start, duration, shouldWriteToScore = ConcreteMusic10Common.WRITE_TO_SCORE)
         }
       )
     )

@@ -2,7 +2,7 @@ package net.soundmining
 
 import net.soundmining.Generative.{WeightedRandom, randomRange}
 import net.soundmining.modular.ModularSynth.{lineControl, percControl, relativePercControl, staticControl}
-import net.soundmining.synth.SuperColliderClient.loadDir
+import net.soundmining.synth.SuperColliderClient.{groupHead, groupTail, loadDir}
 import net.soundmining.synth.{EmptyPatch, Instrument, Patch, PatchPlayback, SuperColliderClient, SuperColliderReceiver}
 import ConcreteMusic10Common._
 import StoneHitSound._
@@ -11,8 +11,51 @@ import WoodHitSound._
 import WoodScratchSound._
 import MetalHitSound._
 import MetalScratchSound._
+import net.soundmining.synth.Instrument.{EFFECT, ROOM_EFFECT, SOURCE}
+
 import scala.annotation.tailrec
 
+/*
+metal hit low 0
+metal hit middle 2
+metal hit high 4
+
+MetalHit1HarmonicVariants low sound 0
+MetalHit1HarmonicVariants low sound 1
+MetalHit1HarmonicVariants middle sound 0
+MetalHit1HarmonicVariants high sound 0
+
+metal scratch low 6
+metal scratch middle 8
+metal scratch high 10
+
+stone hit low 12
+stone hit middle 14
+stone hit high 16
+
+StoneHit1HarmonicVariants low sound 0
+StoneHit1HarmonicVariants low sound 1
+StoneHit1HarmonicVariants middle sound 0
+StoneHit1HarmonicVariants high sound 0
+
+stone scratch low
+stone scratch middle
+stone scratch high
+
+wood hit low
+wood hit middle
+wood hit high
+
+WoodHit1HarmonicVariants low sound 0
+WoodHit1HarmonicVariants low sound 1
+WoodHit1HarmonicVariants middle sound 0
+WoodHit1HarmonicVariants high sound 0
+
+wood scratch low
+wood scratch middle
+wood scratch high
+
+* */
 object ConcreteMusic10 {
   val SYNTH_DIR = "/Users/danielstahl/Documents/Projects/soundmining-modular/src/main/sc/synths"
 
@@ -1542,6 +1585,15 @@ object ConcreteMusic10 {
   def playAllParts(start: Double = 0, reset: Boolean = true): Unit = {
     if(reset) client.resetClock()
 
+    if(reset) client.resetClock()
+
+    if(ConcreteMusic10Common.WRITE_TO_SCORE) {
+      synthPlayer.superColliderScore.addMessage(0, groupHead(0, SOURCE.nodeId))
+      synthPlayer.superColliderScore.addMessage(0, groupTail(SOURCE.nodeId, EFFECT.nodeId))
+      synthPlayer.superColliderScore.addMessage(0, groupTail(EFFECT.nodeId, ROOM_EFFECT.nodeId))
+      synthPlayer.superColliderScore.addMessage(0, loadDir(SYNTH_DIR))
+    }
+
     val part1time = Part1Patch.play(start, reset = false)
     val part2start = part1time + randomRange(5, 8)
     val part2time = Part2Patch.play(part2start, reset = false)
@@ -1553,6 +1605,9 @@ object ConcreteMusic10 {
     val part5time = Part5Patch.play(part5start, reset = false)
     val part6start = part5time + randomRange(5, 8)
     Part6Patch.play(part6start, reset = false)
+    if(WRITE_TO_SCORE) {
+      synthPlayer.superColliderScore.makeScore("concreteMusic10.txt")
+    }
   }
 
   def init(): Unit = {
@@ -1560,7 +1615,11 @@ object ConcreteMusic10 {
     client.start
     Instrument.setupNodes(client)
     client.send(loadDir(SYNTH_DIR))
-    synthPlayer.init()
+    if(WRITE_TO_SCORE) {
+      synthPlayer.initScore()
+    } else {
+      synthPlayer.init()
+    }
     superColliderReceiver.start()
   }
 
